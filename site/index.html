@@ -1,37 +1,35 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег INPUT</title>
+ </head>
+ <body>
+   <input id="GREEN_ON" type="button" value="ВКЛ"> 
+   <input id="RAD_ON" type="button" value="ВКЛ"> 
+   <input id="GREEN_OFF" type="button" value="ВЫКЛ"> 
+   <input id="RAD_OFF" type="button" value="ВЫКЛ"> 
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>NGINX on Railway</title>
-    <meta name="description" content="Choo Choo!" />
-
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="/styles.css?v=1.0" />
-  </head>
-
-  <body>
-    <main>
-      <img
-        src="https://railway.app/brand/logo-light.svg"
-        alt="Railway logo"
-        class="logo"
-      />
-
-      <h1>NGINX on Railway</h1>
-
-      <p>
-        Choo Choo! This is an example of an NGINX static site running on
-        Railway.
-        <a
-          href="https://github.com/railwayapp/starters/tree/master/examples/nginx"
-          >View source</a
-        >.
-      </p>
-    </main>
-
-    <script src="/script.js"></script>
-  </body>
+   <script>
+	let data_led_green_on = document.getElementById("GREEN_ON")
+	data_led_green_on.addEventListener("click",()=>{
+	fetch("http://iocontrol.ru/api/sendData/alisa222/GREEN_LED/1")
+	})
+	
+	let data_led_green_off = document.getElementById("GREEN_OFF")
+	data_led_green_off.addEventListener("click",()=>{
+	fetch("http://iocontrol.ru/api/sendData/alisa222/GREEN_LED/0")
+	})
+	
+	let data_led_red_on = document.getElementById("RAD_ON")
+	data_led_red_on.addEventListener("click",()=>{
+	fetch("http://iocontrol.ru/api/sendData/alisa222/RAD_LED/1")
+	})
+	
+	let data_led_red_off = document.getElementById("RAD_OFF")
+	data_led_red_off.addEventListener("click",()=>{
+	fetch("http://iocontrol.ru/api/sendData/alisa222/RAD_LED/0")
+	})		
+   </script>
+ </body>
 </html>
