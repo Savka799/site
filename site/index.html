@@ -9,6 +9,7 @@
    <input id="RAD_ON" type="button" value="ВКЛ"> 
    <input id="GREEN_OFF" type="button" value="ВЫКЛ"> 
    <input id="RAD_OFF" type="button" value="ВЫКЛ"> 
+   <input id="BIPER" type="button" value="ВКЛЮЧИТЬ МУЗЫКУ"> 
 
    <script>
 	let data_led_green_on = document.getElementById("GREEN_ON")
@@ -29,7 +30,12 @@
 	let data_led_red_off = document.getElementById("RAD_OFF")
 	data_led_red_off.addEventListener("click",()=>{
 	fetch("https://iocontrol.ru/api/sendData/alisa222/RAD_LED/0")
-	})		
+	})
+
+	let data_BIPER = document.getElementById("BIPER")
+	data_BIPER.addEventListener("click",()=>{
+	fetch("")
+	})
    </script>
  </body>
 </html>
